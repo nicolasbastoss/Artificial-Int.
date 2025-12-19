@@ -18,16 +18,16 @@
       --radius: 12px;
     }
 
-   body {
-  margin: 0;
-  font-family: var(--font-family);
-  letter-spacing: var(--letter-spacing);
-  color: #000;              /* texto em preto para contraste */
-  background: #fff;         /* fundo branco */
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
+    body {
+      margin: 0;
+      font-family: var(--font-family);
+      letter-spacing: var(--letter-spacing);
+      background: #fff;       /* fundo branco */
+      color: #000;            /* texto padrão fora da imagem em preto */
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
     /* Header com o nome no topo esquerdo */
     header {
@@ -37,9 +37,10 @@
       font-size: var(--title-size);
       font-weight: 400;
       text-transform: lowercase;
+      color: #fff; /* texto sobre a imagem em branco */
     }
-    span{
-      font-weight:700;
+    header span {
+      font-weight: 700;
     }
 
     /* Imagem de fundo */
@@ -50,16 +51,16 @@
       overflow: hidden;
     }
 
-  .hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;   /* mostra a imagem inteira sem cortar */
-  object-position: center;
-  display: block;
-  background-color: #000; /* bordas pretas se sobrar espaço */
-}
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;   /* mostra a imagem inteira sem cortar */
+      object-position: center;
+      display: block;
+      background-color: #fff; /* bordas brancas se sobrar espaço */
+    }
 
-    /* Conteúdo central */
+    /* Conteúdo central sobre a imagem */
     .overlay {
       position: absolute;
       top: 50%;
@@ -68,6 +69,7 @@
       text-align: center;
       width: 90%;
       max-width: 600px;
+      color: #fff; /* texto sobre a imagem em branco */
     }
 
     .overlay h2 {
@@ -90,7 +92,7 @@
       background: transparent;
       border: none;
       outline: none;
-      color: #fff;
+      color: #fff; /* texto dentro da busca em branco */
       font-family: var(--font-family);
       letter-spacing: var(--letter-spacing);
       font-size: 16px;
@@ -107,7 +109,6 @@
 <body>
   <div class="hero">
     <header>artificial<span>int.</span></header>
-    <!-- Imagem de teste -->
     <img src="background.png" alt="Imagem de teste" />
     <div class="overlay">
       <h2>Hey, NAME<br>Where should we start?</h2>
@@ -120,5 +121,10 @@
       </div>
     </div>
   </div>
+
+  <!-- Texto fora da imagem aparece em preto -->
+  <section style="padding:20px;">
+    <p>Este é um texto fora da imagem. Ele aparece em preto sobre o fundo branco.</p>
+  </section>
 </body>
 </html>
